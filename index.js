@@ -9,7 +9,7 @@ var servercount = client.guilds.size;
 
 // On start le bot
 client.on("ready", () => {
-	client.user.setPresence({ game: { name: 'Le bot peut buger !', type: 0 } });
+	client.user.setPresence({ game: { name: 'Prêt à l\'utilisation', type: 0 } });
 	console.log ("-------------------------------------");
 	console.log('    [!] ComaBot connecté [!]');
 	console.log ("-------------------------------------");
