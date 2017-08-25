@@ -78,8 +78,4 @@ kick(client);*/
 const test1 = require('./module/test1.js');
 test1(client);
 
-/* Partie help2 */
-const help2 = require('./module/help2.js');
-help2(client);
-
 client.login(token)
