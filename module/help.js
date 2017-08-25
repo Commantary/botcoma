@@ -8,7 +8,7 @@ module.exports = function(client){
     
             client.on('message', message =>{
 
-                if(message.content === '/help') {
+                if(message.content === '+help') {
                     return message.channel.sendMessage('', {embed: {
                         title: "Commandes:",
                         color: 0xff0000,
