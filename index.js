@@ -9,49 +9,33 @@ var servercount = client.guilds.size;
 
 // On start le bot
 client.on("ready", () => {
-	client.user.setPresence({ game: { name: 'En Dev...', type: 0 } });
+	client.user.setPresence({ game: { name: 'Le bot peut buger !', type: 0 } });
 	console.log ("-------------------------------------");
 	console.log('    [!] ComaBot connecté [!]');
 	console.log ("-------------------------------------");
-});
+}); 
+// Create an event listener for new guild members
+
 
 client.on('message', message =>{
 	// Mon code ici
     let adminrole = message.guild.roles.find("name", "Anti-modo");
     let modorole = message.guild.roles.find("name", "Modo");
-	
+	message.lastMessage
 	//Variable d'environnement
 
   const voiceConnection = message.member.voiceConnection;
   const voiceChannel = message.member.voiceChannel;
 
 //Traitement
-if(message.content.startsWith(prefix +'admin')){
-	//2eme condition: vérification
-	if(message.member.roles.has(adminrole)){
-		//oui il a bien le role
-		message.reply('GOOD ! Tu as bien le role ;)')
-	} else {
-		//non il y a pas
-		message.reply('AH ! Tu ne l\'as pas :(');
-	}
-	console.log
-  }
-  if (message.content === '+s'){
-	  client.user.setGame('message.content.substring(3)');
-  }
-	  
 
-  if(message.content.startsWith(prefix + 'modo')){
-	  if(message.member.roles.has(modorole.id)){
-		  // Non ta pas
-		  message.reply('Tu es modo :)');
-	  } else {
-		  // oui ta le role
-		  message.reply('Tu n\'est pas modo');
-	  }
-  }
 
+if(message.content === '12345') {
+// Edit the guild name
+guild.setName('Discord Guild')
+.then(updated => console.log(`Updated guild name to ${guild.name}`))
+.catch(console.error);
+}
 })
 
 /* Partie Ping */
@@ -81,6 +65,14 @@ cpasmoi(client);
 /* Partie Verif Role */
 const verifrole = require('./module/verifrole.js');
 verifrole(client);
+
+/* Partie Help */
+const help = require('./module/help.js');
+help(client);
+
+/* Partie Kick 
+const kick = require('./module/kick.js');
+kick(client);*/
 
 /* Partie Teste1 */
 const test1 = require('./module/test1.js');
